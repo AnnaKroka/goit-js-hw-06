@@ -74,53 +74,53 @@
 
 
 //-------------- TASK 3-5--------------------
-const sortByDescendingFriendCount = (users) => {
+// const sortByDescendingFriendCount = (users) => {
 
-    const friendsCount = users.toSorted((currentFriend, nextFriend) => {
-        return nextFriend.friends.length - currentFriend.friends.length;
-});
-return friendsCount;
-}
+//     const friendsCount = users.toSorted((currentFriend, nextFriend) => {
+//         return nextFriend.friends.length - currentFriend.friends.length;
+// });
+// return friendsCount;
+// }
 
-console.log(
-    sortByDescendingFriendCount([
-      {
-        name: "Moore Hensley",
-        friends: ["Sharron Pace"],
-        gender: "male"
-      },
-      {
-        name: "Sharlene Bush",
-        friends: ["Briana Decker", "Sharron Pace"],
-        gender: "female"
-      },
-      {
-        name: "Ross Vazquez",
-        friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-        gender: "male"
-      },
-      {
-        name: "Elma Head",
-        friends: ["Goldie Gentry", "Aisha Tran"],
-        gender: "female"
-      },
-      {
-        name: "Carey Barr",
-        friends: ["Jordan Sampson", "Eddie Strong"],
-        gender: "male"
-      },
-      {
-        name: "Blackburn Dotson",
-        friends: ["Jacklyn Lucas", "Linda Chapman"],
-        gender: "male"
-      },
-      {
-        name: "Sheree Anthony",
-        friends: ["Goldie Gentry", "Briana Decker"],
-        gender: "female"
-      }
-    ])
-  );
+// console.log(
+//     sortByDescendingFriendCount([
+//       {
+//         name: "Moore Hensley",
+//         friends: ["Sharron Pace"],
+//         gender: "male"
+//       },
+//       {
+//         name: "Sharlene Bush",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         gender: "female"
+//       },
+//       {
+//         name: "Ross Vazquez",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         gender: "male"
+//       },
+//       {
+//         name: "Elma Head",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         gender: "female"
+//       },
+//       {
+//         name: "Carey Barr",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         gender: "male"
+//       },
+//       {
+//         name: "Blackburn Dotson",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         gender: "male"
+//       },
+//       {
+//         name: "Sheree Anthony",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         gender: "female"
+//       }
+//     ])
+//   );
   // [
   //   {
   //     name: "Ross Vazquez",
@@ -158,3 +158,32 @@ console.log(
   //     gender: "male"
   //   }
   // ]
+
+  //-------------- TASK 3-6--------------------
+class StringBuilder {
+  #value;
+  constructor(initialValue){
+    this.#value = initialValue;
+  }
+  getValue() {
+    return this.#value;
+  }
+  padEnd(str) {
+    this.#value = this.#value + str;
+  }
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+  padBoth(str) {
+    this.#value = str + this.#value + str;
+  }
+ }
+
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
