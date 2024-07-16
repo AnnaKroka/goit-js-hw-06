@@ -151,22 +151,23 @@
 //-------------- TASK 2-6--------------------
 
 class Storage {
-    constructor(items) {
-       this.items = items;
+    #items;
+    constructor(arr) {
+       this.#items = arr;
     }
     getItems() {
-        return this.items;
+        return this.#items;
     }
     addItem(newItem) {
-        return this.items.push(newItem);
+        return this.#items.push(newItem);
     }
     removeItem(itemToRemove) {
-        const idxOfItem = this.items.indexOf(itemToRemove);
+        const idxOfItem = this.#items.indexOf(itemToRemove);
         
         if(idxOfItem < 0) {
-            return this.items;
+            return this.#items;
         } else {
-            return this.items.splice(idxOfItem, 1);
+            return this.#items.splice(idxOfItem, 1);
         }
     }
 }
